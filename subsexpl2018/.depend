@@ -1,0 +1,58 @@
+common.cmo: setypes.cmo
+common.cmx: setypes.cmx
+input.cmo: setypes.cmo
+input.cmx: setypes.cmx
+output.cmo: common.cmo input.cmo setypes.cmo
+output.cmx: common.cmx input.cmx setypes.cmx
+sematchls.cmo: setypes.cmo
+sematchls.cmx: setypes.cmx
+seredls.cmo: sematchls.cmo setypes.cmo
+seredls.cmx: sematchls.cmx setypes.cmx
+selexerls.cmo: setypes.cmo
+selexerls.cmx: setypes.cmx
+sigma.cmo: common.cmo input.cmo output.cmo selexerls.cmo sematchls.cmo \
+    seredls.cmo setypes.cmo
+sigma.cmx: common.cmx input.cmx output.cmx selexerls.cmx sematchls.cmx \
+    seredls.cmx setypes.cmx
+sematchsus.cmo: setypes.cmo
+sematchsus.cmx: setypes.cmx
+seredsus.cmo: sematchsus.cmo setypes.cmo
+seredsus.cmx: sematchsus.cmx setypes.cmx
+selexersus.cmo: setypes.cmo
+selexersus.cmx: setypes.cmx
+susp.cmo: common.cmo input.cmo output.cmo selexersus.cmo sematchsus.cmo \
+    seredsus.cmo setypes.cmo
+susp.cmx: common.cmx input.cmx output.cmx selexersus.cmx sematchsus.cmx \
+    seredsus.cmx setypes.cmx
+sematchlse.cmo: setypes.cmo
+sematchlse.cmx: setypes.cmx
+seredlse.cmo: sematchlse.cmo setypes.cmo
+seredlse.cmx: sematchlse.cmx setypes.cmx
+selexerlse.cmo: setypes.cmo
+selexerlse.cmx: setypes.cmx
+lambdase.cmo: common.cmo input.cmo output.cmo selexerlse.cmo sematchlse.cmo \
+    seredlse.cmo setypes.cmo
+lambdase.cmx: common.cmx input.cmx output.cmx selexerlse.cmx sematchlse.cmx \
+    seredlse.cmx setypes.cmx
+sematchsuscomb.cmo: setypes.cmo
+sematchsuscomb.cmx: setypes.cmx
+seredsuscomb.cmo: sematchsus.cmo sematchsuscomb.cmo setypes.cmo
+seredsuscomb.cmx: sematchsus.cmx sematchsuscomb.cmx setypes.cmx
+selexersuscomb.cmo: setypes.cmo
+selexersuscomb.cmx: setypes.cmx
+suspcomb.cmo: common.cmo input.cmo output.cmo selexersuscomb.cmo \
+    sematchsuscomb.cmo seredsuscomb.cmo setypes.cmo
+suspcomb.cmx: common.cmx input.cmx output.cmx selexersuscomb.cmx \
+    sematchsuscomb.cmx seredsuscomb.cmx setypes.cmx
+sepure.cmo: common.cmo lambdase.cmo sematchlse.cmo sematchsuscomb.cmo \
+    seredlse.cmo seredsuscomb.cmo setypes.cmo suspcomb.cmo
+sepure.cmx: common.cmx lambdase.cmx sematchlse.cmx sematchsuscomb.cmx \
+    seredlse.cmx seredsuscomb.cmx setypes.cmx suspcomb.cmx
+pure.cmo: common.cmo input.cmo lambdase.cmo output.cmo selexerlse.cmo \
+    selexersuscomb.cmo sepure.cmo setypes.cmo suspcomb.cmo
+pure.cmx: common.cmx input.cmx lambdase.cmx output.cmx selexerlse.cmx \
+    selexersuscomb.cmx sepure.cmx setypes.cmx suspcomb.cmx
+subsexpl.cmo: input.cmo lambdase.cmo output.cmo pure.cmo setypes.cmo \
+    sigma.cmo susp.cmo suspcomb.cmo
+subsexpl.cmx: input.cmx lambdase.cmx output.cmx pure.cmx setypes.cmx \
+    sigma.cmx susp.cmx suspcomb.cmx

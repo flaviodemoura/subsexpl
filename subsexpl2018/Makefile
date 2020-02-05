@@ -192,7 +192,7 @@ mly.cmx:
 	$(CAMLYACC) $<
 
 clean:
-	rm -f *.cm[iox] *.o *~ .*~ \#*\#
+	rm -f *.cm[iox] *.o *.aux *.log *~ .*~ \#*\#
 	rm -f $(EXEC).bin
 	rm -f $(EXEC).opt
 	rm -f ledit.out
